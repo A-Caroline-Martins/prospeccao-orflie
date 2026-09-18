@@ -7,5 +7,36 @@
 html, body{
     height: 100%;
     font-family: 'Poppins', sans-serif;
+}
+
+.bg-dark{
+    background-color: #353333;
     color: #fff;
+}
+
+.bg-light{
+    background-color: #e8e6e6;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+li{
+    list-style: none;
+}
+
+.image-test{
+    background-color: #fff;
+    color: #353333;
+    width: 450px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #353333;
 }
