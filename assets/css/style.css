@@ -80,18 +80,50 @@ li {
   line-height: 1.6;
 }
 
-.image-test {
-  background-color: var(--color-surface);
-  color: var(--color-text-on-light);
-  width: 450px;
-  height: 400px;
-  padding: 20px;
-  border-radius: 10px;
+.about-visual {
+  flex: 1;
+  width: 100%;
+  max-width: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.about-card {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background:
+    radial-gradient(at 25% 15%, rgba(251, 191, 36, 0.22) 0, transparent 60%),
+    radial-gradient(at 80% 85%, rgba(249, 115, 22, 0.16) 0, transparent 60%),
+    var(--color-surface);
   border: 1px solid var(--color-border-light);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-card-icon {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 2.5rem;
+}
+
+.about-card-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text-on-light);
+  text-align: center;
 }
 
 .btn-cta {
@@ -183,6 +215,27 @@ li {
   color: var(--color-accent);
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-surface);
+  color: var(--color-text-on-light);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 /*Header*/
 .header {
   min-height: 80vh;
@@ -266,6 +319,8 @@ li {
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 .card {
@@ -379,19 +434,26 @@ li {
   display: flex;
   align-items: center;
   gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .showcase-row.is-reverse {
   flex-direction: row-reverse;
 }
 
-.showcase-visual,
-.showcase-content {
-  flex: 1;
+.showcase-visual {
+  flex: 0 0 auto;
   width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .showcase-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -430,7 +492,7 @@ li {
 /*Showcase — mock cards*/
 .mock-card-frame {
   width: 100%;
-  max-width: 480px;
+  max-width: 540px;
   margin: 0 auto;
   padding: 1.5px;
   border-radius: 17.5px;
@@ -1399,6 +1461,408 @@ footer {
   text-align: center;
   font-size: 0.85rem;
   color: var(--color-text-on-light-muted);
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+
+/* Telas grandes / laptops (≤1200px) — reduz padding lateral dos blocos */
+@media (max-width: 1200px) {
+  .header,
+  .about,
+  .features,
+  .showcase,
+  .comparison,
+  .final-cta,
+  .contact {
+    padding: 5rem 4rem;
+  }
+
+  .footer {
+    padding: 4rem 3rem;
+  }
+
+  .footer-bottom {
+    padding: 1.25rem 3rem;
+  }
+}
+
+/* Tablets deitados (≤1024px) — empilha grades e linhas lado a lado */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-texts {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .showcase-row,
+  .showcase-row.is-reverse {
+    flex-direction: column;
+  }
+
+  .showcase-visual,
+  .showcase-content {
+    width: 100%;
+  }
+
+  .showcase-visual {
+    order: 2;
+  }
+
+  .showcase-content {
+    order: 1;
+  }
+
+  .features-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .features-cards .card {
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+    max-height: 500px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .comparison-grid {
+    max-width: 900px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-visual,
+  .about-card {
+    max-width: 800px;
+    max-height: 400px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .showcase-title {
+    font-size: 2.25rem;
+  }
+
+  .final-cta-title {
+    font-size: 2.5rem;
+  }
+
+  .comparison-title {
+    font-size: 2rem;
+  }
+}
+
+/* A partir daqui o menu vira sanduíche (não cabe mais os links + botão) */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem 2rem;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-light);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .nav-menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-links ul li {
+    margin: 0;
+  }
+
+  .nav-menu .btn-cta-nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tablets em pé / celulares grandes (≤768px) */
+@media (max-width: 768px) {
+  .header,
+  .about,
+  .features,
+  .showcase,
+  .comparison,
+  .final-cta,
+  .contact {
+    padding: 4rem 5rem;
+    min-height: auto;
+  }
+
+  .about {
+    padding: 4rem 2rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .about-texts {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .about-card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.25rem;
+  }
+
+  .about-visual {
+    max-width: 600px;
+  }
+  .about-card {
+    max-height: 300px;
+  }
+
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-bottom {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.15rem;
+  }
+
+  .showcase-title {
+    font-size: 2rem;
+  }
+
+  .showcase-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .final-cta-title {
+    font-size: 2.25rem;
+  }
+
+  .comparison-title {
+    font-size: 1.75rem;
+  }
+
+  .image-test {
+    width: 100%;
+    max-width: 380px;
+    height: 320px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .header-buttons button {
+    width: 100%;
+  }
+
+  .form-contact {
+    width: 100%;
+    padding: 1.75rem;
+  }
+
+  .showcase {
+    gap: 3.5rem;
+  }
+
+  .showcase-row {
+    gap: 2rem;
+  }
+
+  .features {
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .features-cards {
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .features-cards .card {
+    padding: 2.5rem 2rem;
+    max-width: 500px;
+  }
+}
+
+/* Celulares médios (≤600px) */
+@media (max-width: 600px) {
+  .card-texts .title {
+    font-size: 1.3rem;
+  }
+
+  .comparison-card {
+    padding: 1.5rem;
+  }
+
+  .comparison-grid {
+    gap: 1.5rem;
+  }
+
+  .final-cta-title {
+    font-size: 1.85rem;
+  }
+
+  .comparison-title {
+    font-size: 1.5rem;
+  }
+
+  .mock-card-frame {
+    max-width: 100%;
+  }
+}
+
+/* Celulares pequenos (≤480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 70px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-menu {
+    top: 70px;
+    padding: 1.25rem 1.5rem 1.75rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .showcase-title {
+    font-size: 1.6rem;
+  }
+
+  .final-cta-title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .mock-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-card,
+  .form-contact {
+    padding: 1.25rem;
+  }
+
+  .comparison-badge {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.55rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .final-cta-badge {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Celulares bem pequenos (≤380px) */
+@media (max-width: 380px) {
+  .header,
+  .about,
+  .features,
+  .showcase,
+  .comparison,
+  .final-cta,
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .showcase-title {
+    font-size: 1.4rem;
+  }
+
+  .final-cta-title {
+    font-size: 1.4rem;
+  }
+
+  .card-texts .title {
+    font-size: 1.15rem;
+  }
+
+  .mock-stat-number {
+    font-size: 2rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -32,16 +32,28 @@
       <div class="logo">
         <span>Orflia</span>
       </div>
-      <div class="nav-links">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#features">Funcionalidades</a></li>
-          <li><a href="#showcase">Prospecção</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#showcase">Prospecção</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <button class="btn-cta btn-cta-nav btn-cta-primary">Fale Conosco</button>
       </div>
-      <button class="btn-cta btn-cta-nav btn-cta-primary">Fale Conosco</button>
     </nav>
     <header>
       <section class="header">
@@ -81,9 +93,12 @@
           uma campanha automática.
         </p>
       </div>
-      <div class="about-image">
-        <div class="image-test">
-          <p>Prospecção Orflia</p>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-card-icon">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <p class="about-card-label">Prospecção Orflia</p>
         </div>
       </div>
     </section>
@@ -183,7 +198,7 @@
                 <i
                   class="fa-solid fa-location-dot mock-map-pin pin-accent"
                   style="top: 22%; left: 58%"
-                  data-name="Auto Center SP"
+                  data-name="Forno Artesanal"
                 ></i>
                 <i
                   class="fa-solid fa-location-dot mock-map-pin pin-teal"
@@ -193,17 +208,17 @@
                 <i
                   class="fa-solid fa-location-dot mock-map-pin pin-accent"
                   style="top: 52%; left: 78%"
-                  data-name="Ótica Vizzú"
+                  data-name="Pão da Roça"
                 ></i>
                 <i
                   class="fa-solid fa-location-dot mock-map-pin pin-teal"
                   style="top: 78%; left: 24%"
-                  data-name="Pet Shop Lar"
+                  data-name="Doceria Bella"
                 ></i>
                 <i
                   class="fa-solid fa-location-dot mock-map-pin pin-accent"
                   style="top: 78%; left: 55%"
-                  data-name="Studio Bella"
+                  data-name="Trigo Dourado"
                 ></i>
                 <span class="mock-map-status">Raspando...</span>
               </div>
@@ -250,7 +265,7 @@
             Filtre todas as empresas do Brasil por CNAE, cidade, UF e porte. A
             contagem é exata e a consulta é ilimitada — sem gastar créditos.
           </p>
-          <ul class="checklist">
+          <ul class="checklist">mock-card-title
             <li>
               <i class="fa-solid fa-circle-check"></i> Filtro por CNAE, cidade,
               UF e porte
@@ -747,6 +762,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#showcase">Prospecção</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
         </div>
@@ -755,6 +771,7 @@
         <p>&copy; 2026 Orflia. Todos os direitos reservados.</p>
       </div>
     </footer>
+    <script src="./assets/js/nav-toggle.js"></script>
     <script src="./assets/js/google-maps-showcase.js"></script>
     <script src="./assets/js/receita-federal-showcase.js"></script>
     <script src="./assets/js/enrichment-showcase.js"></script>
