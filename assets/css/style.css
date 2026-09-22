@@ -163,9 +163,10 @@ li {
 
 /*NavBar*/
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  column-gap: 2rem;
   padding: 0 2rem;
   height: 80px;
   width: 100%;
@@ -177,7 +178,13 @@ li {
   border-bottom: 1px solid var(--color-border-light);
 }
 
+.nav-menu {
+  display: contents;
+}
+
 .nav-links {
+  grid-column: 2;
+  justify-self: center;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -204,19 +211,30 @@ li {
 }
 
 .btn-cta-nav {
+  grid-column: 3;
+  justify-self: end;
   padding: 1rem;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-accent);
+  grid-column: 1;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+  height: 36px;
+  width: auto;
 }
 
 .nav-toggle {
   display: none;
+  grid-column: 3;
+  justify-self: end;
   align-items: center;
   justify-content: center;
   width: 42px;
@@ -228,12 +246,6 @@ li {
   color: var(--color-text-on-light);
   font-size: 1.1rem;
   cursor: pointer;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }
 
 /*Header*/
@@ -1387,8 +1399,11 @@ footer {
   max-width: 500px;
 }
 
-.footer-texts .title {
-  font-size: 2rem;
+.footer-logo {
+  display: block;
+  align-self: flex-start;
+  height: 40px;
+  width: auto;
 }
 
 .footer-texts .description {
@@ -1570,11 +1585,29 @@ footer {
 
 /* A partir daqui o menu vira sanduíche (não cabe mais os links + botão) */
 @media (max-width: 900px) {
+  .navbar {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  .logo {
+    grid-row: 1;
+  }
+
   .nav-toggle {
     display: flex;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .btn-cta-nav {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .nav-menu {
+    display: flex;
+    order: 99;
     position: absolute;
     top: 80px;
     left: 0;
@@ -1608,11 +1641,6 @@ footer {
 
   .nav-links ul li {
     margin: 0;
-  }
-
-  .nav-menu .btn-cta-nav {
-    width: 100%;
-    justify-content: center;
   }
 }
 
