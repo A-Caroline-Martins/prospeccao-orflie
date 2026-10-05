@@ -6,4 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initSocialShowcase();
   initCargoShowcase();
   initShowcaseTabs();
+  initContactForm();
 });
