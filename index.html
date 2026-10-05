@@ -931,7 +931,7 @@
         </p>
       </div>
       <div class="form-contact">
-        <form action="">
+        <form id="contact-form">
           <div class="form-group">
             <label for="name">Nome</label>
             <div class="form-input-icon">
@@ -1055,5 +1055,39 @@
     <script src="./assets/js/cargo-showcase.js"></script>
     <script src="./assets/js/showcase-tabs.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <!-- Orflie CRM - Captura de Formulário -->
+    <script>
+      (function () {
+        var form = document.getElementById("contact-form");
+        if (!form) return;
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var data = {};
+          new FormData(form).forEach(function (v, k) {
+            data[k] = v;
+          });
+          fetch(
+            "https://orflia.ai/api/webhooks/formulario/82a7480a-3ca9-4995-87ab-08828ece3600",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            },
+          )
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (res) {
+              if (res.ok) {
+                // Substitua pelo seu redirecionamento ou mensagem de sucesso
+                alert("Obrigado! Entraremos em contato em breve.");
+                form.reset();
+              }
+            })
+            .catch(console.error);
+        });
+      })();
+    </script>
   </body>
 </html>
