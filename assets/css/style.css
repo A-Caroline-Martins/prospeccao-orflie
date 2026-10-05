@@ -174,6 +174,15 @@ li {
     border-color 0.2s ease;
 }
 
+/* Links com cara de botão: mesma fonte/tamanho padrão dos <button> */
+:where(a).btn-cta {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 13.3333px;
+  line-height: normal;
+  text-align: center;
+}
+
 .btn-cta-primary {
   background-color: var(--color-accent);
   color: #fff;
@@ -315,7 +324,7 @@ li {
   justify-content: center;
 }
 
-.header-buttons button {
+.header-buttons .btn-cta {
   width: 200px;
   font-size: 1rem;
 }
@@ -383,7 +392,7 @@ li {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border-light);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 1.5rem;
   border-radius: 10px;
   overflow: hidden;
   transition:
@@ -1064,6 +1073,188 @@ li {
   border-radius: 20px;
 }
 
+/*Showcase — prospecção por cargo (empresa → pessoa → e-mail)*/
+.mock-steps {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mock-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-on-light-muted);
+  background-color: rgba(0, 0, 0, 0.04);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.mock-step.is-active {
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.mock-step.is-done {
+  color: var(--color-success-strong);
+  background-color: var(--color-success-soft);
+}
+
+.mock-step-line {
+  flex: 1;
+  height: 2px;
+  min-width: 12px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.mock-person {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.mock-person.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mock-person-avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-text-on-dark);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+}
+
+.mock-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.mock-person-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mock-person-role {
+  font-size: 0.72rem;
+  color: var(--color-text-on-light-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mock-person-badge {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--color-text-on-dark);
+  background-color: #0a66c2;
+}
+
+.mock-guesses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mock-guesses-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-on-light-muted);
+}
+
+.mock-guess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 36px;
+  padding: 0 0.85rem;
+  border: 1px dashed var(--color-border-light);
+  border-radius: 8px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  color: var(--color-text-on-light-muted);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.mock-guess-text {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mock-guess-icon {
+  flex-shrink: 0;
+}
+
+.mock-guess.is-testing {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.mock-guess.is-testing .mock-guess-icon {
+  animation: field-spin 0.8s linear infinite;
+}
+
+.mock-guess.is-invalid {
+  color: var(--color-danger);
+  border-color: transparent;
+  background-color: var(--color-danger-soft);
+}
+
+.mock-guess.is-invalid .mock-guess-text {
+  text-decoration: line-through;
+}
+
+.mock-guess.is-valid {
+  color: var(--color-success-strong);
+  font-weight: 700;
+  border-style: solid;
+  border-color: var(--color-success-strong);
+  background-color: var(--color-success-soft);
+}
+
+.mock-guess.is-skipped {
+  opacity: 0.4;
+}
+
 /*Comparison — Sem Orflia vs Com Orflia*/
 .comparison {
   width: 100%;
@@ -1537,6 +1728,15 @@ footer {
   .footer-bottom {
     padding: 1.25rem 3rem;
   }
+
+  /* 4 cards lado a lado ficam estreitos demais — vira grade 2x2 */
+  .features-cards {
+    flex-wrap: wrap;
+  }
+
+  .features-cards .card {
+    flex: 1 1 calc(50% - 1rem);
+  }
 }
 
 /* Tablets deitados (≤1024px) — empilha grades e linhas lado a lado */
@@ -1577,6 +1777,7 @@ footer {
   }
 
   .features-cards .card {
+    flex: 1 1 auto;
     padding: 2.5rem 2rem;
     max-width: 600px;
     max-height: 500px;
@@ -1765,7 +1966,7 @@ footer {
     max-width: 320px;
   }
 
-  .header-buttons button {
+  .header-buttons .btn-cta {
     width: 100%;
   }
 
@@ -1866,6 +2067,15 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .mock-step {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .mock-step i {
+    display: none;
+  }
+
   .mock-card,
   .form-contact {
     padding: 1.25rem;
@@ -1933,7 +2143,11 @@ footer {
   .mock-field-spinner,
   .mock-field-value,
   .mock-success,
-  .mock-profile {
+  .mock-profile,
+  .mock-step,
+  .mock-person,
+  .mock-guess,
+  .mock-guess-icon {
     animation: none;
     transition: none;
   }

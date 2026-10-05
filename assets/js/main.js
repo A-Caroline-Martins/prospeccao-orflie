@@ -4,4 +4,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReceitaFederalShowcase();
   initEnrichmentShowcase();
   initSocialShowcase();
+  initCargoShowcase();
 });
