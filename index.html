@@ -194,7 +194,25 @@
         </p>
       </div>
 
-      <div class="showcase-row">
+      <div class="showcase-tabs" role="tablist" aria-label="Tipos de prospecção">
+        <button class="showcase-tab is-active" id="tab-gmaps" role="tab" aria-selected="true" aria-controls="showcase-gmaps">
+          Google Maps
+        </button>
+        <button class="showcase-tab" id="tab-receita" role="tab" aria-selected="false" aria-controls="showcase-receita" tabindex="-1">
+          Receita Federal
+        </button>
+        <button class="showcase-tab" id="tab-enriquecimento" role="tab" aria-selected="false" aria-controls="showcase-enriquecimento" tabindex="-1">
+          Enriquecimento
+        </button>
+        <button class="showcase-tab" id="tab-social" role="tab" aria-selected="false" aria-controls="showcase-social" tabindex="-1">
+          Redes sociais
+        </button>
+        <button class="showcase-tab" id="tab-cargo" role="tab" aria-selected="false" aria-controls="showcase-cargo" tabindex="-1">
+          Por cargo
+        </button>
+      </div>
+
+      <div class="showcase-row" id="showcase-gmaps" role="tabpanel" aria-labelledby="tab-gmaps">
         <div class="showcase-visual">
           <div class="mock-card-frame">
             <div class="mock-card" data-animate="gmaps">
@@ -283,7 +301,7 @@
         </div>
       </div>
 
-      <div class="showcase-row">
+      <div class="showcase-row" id="showcase-receita" role="tabpanel" aria-labelledby="tab-receita">
         <div class="showcase-content">
           <p class="eyebrow">Receita Federal</p>
           <h3>Garimpe a base de 60M+ de CNPJs.</h3>
@@ -349,7 +367,7 @@
         </div>
       </div>
 
-      <div class="showcase-row">
+      <div class="showcase-row" id="showcase-enriquecimento" role="tabpanel" aria-labelledby="tab-enriquecimento">
         <div class="showcase-visual">
           <div class="mock-card-frame">
             <div class="mock-card" data-animate="enrich">
@@ -449,7 +467,7 @@
         </div>
       </div>
 
-      <div class="showcase-row">
+      <div class="showcase-row" id="showcase-social" role="tabpanel" aria-labelledby="tab-social">
         <div class="showcase-content">
           <p class="eyebrow">Redes sociais</p>
           <h3>Prospecte direto no Instagram e TikTok.</h3>
@@ -581,7 +599,7 @@
         </div>
       </div>
 
-      <div class="showcase-row">
+      <div class="showcase-row" id="showcase-cargo" role="tabpanel" aria-labelledby="tab-cargo">
         <div class="showcase-visual">
           <div class="mock-card-frame">
             <div class="mock-card" data-animate="cargo">
@@ -828,6 +846,19 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="whatsapp">WhatsApp</label>
+            <div class="form-input-icon">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                placeholder="(XX) XXXXX-XXXX"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
             <label for="message">Mensagem</label>
             <div class="form-input-icon">
               <i class="fa-solid fa-comment-dots"></i>
@@ -909,6 +940,7 @@
     <script src="./assets/js/enrichment-showcase.js"></script>
     <script src="./assets/js/social-showcase.js"></script>
     <script src="./assets/js/cargo-showcase.js"></script>
+    <script src="./assets/js/showcase-tabs.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

@@ -499,6 +499,82 @@ li {
 .showcase-row.is-reverse {
   flex-direction: row-reverse;
 }
+.showcase-tabs {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: -2rem auto 0;
+  border-bottom: 1px solid var(--color-border-light);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.showcase-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-tab {
+  flex: 1 0 auto;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-text-on-light-muted);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.showcase-tab:hover {
+  color: var(--color-text-on-light);
+}
+
+.showcase-tab.is-active {
+  color: var(--color-text-on-light);
+  border-bottom-color: var(--color-accent);
+}
+
+.showcase-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: 6px 6px 0 0;
+}
+
+.showcase-row[role="tabpanel"] {
+  min-height: 560px;
+}
+
+.showcase-row[role="tabpanel"] .showcase-content {
+  order: 1;
+}
+
+.showcase-row[role="tabpanel"] .showcase-visual {
+  order: 2;
+}
+
+.showcase-row[hidden] {
+  display: none;
+}
+
+.showcase-row.is-entering {
+  animation: panel-in 0.35s ease;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .showcase-visual {
   flex: 0 0 auto;
@@ -1983,6 +2059,15 @@ footer {
     gap: 2rem;
   }
 
+  .showcase-tabs {
+    margin-top: -1.5rem;
+  }
+
+  .showcase-tab {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+  }
+
   .features {
     gap: 1rem;
     align-items: center;
@@ -2147,7 +2232,9 @@ footer {
   .mock-step,
   .mock-person,
   .mock-guess,
-  .mock-guess-icon {
+  .mock-guess-icon,
+  .showcase-row.is-entering,
+  .showcase-tab {
     animation: none;
     transition: none;
   }
