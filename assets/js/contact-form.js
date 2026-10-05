@@ -1,8 +1,9 @@
 // Orflie CRM - Captura de Formulário
 function initContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
+  document.querySelectorAll(".js-contact-form").forEach(setupContactForm);
+}
 
+function setupContactForm(form) {
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form-status");
   const buttonHtml = button.innerHTML;

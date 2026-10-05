@@ -58,7 +58,9 @@
     <header>
       <section class="header">
         <div class="home-texts">
-          <p class="eyebrow">Orflia - Prospecção</p>
+          <span class="hero-badge">
+            <i class="fa-solid fa-bolt"></i> Orflia - Prospecção
+          </span>
           <h1 class="showcase-title">
             Novos clientes todos os dias,
             <span class="highlight">no automático</span>
@@ -70,19 +72,36 @@
             vender.
           </p>
         </div>
-        <div class="header-buttons">
-          <a class="btn-cta btn-cta-home btn-cta-secondary" href="#about">
-            Saiba Mais
-          </a>
-          <a
-            class="btn-cta btn-cta-home btn-cta-primary"
-            href="https://orflia.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Comece Agora
-          </a>
-        </div>
+        <form class="hero-form js-contact-form">
+          <p class="hero-form-title">
+            Fale com a gente <i class="fa-solid fa-arrow-right"></i>
+          </p>
+          <div class="hero-form-fields">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nome"
+              aria-label="Nome"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              aria-label="E-mail"
+              required
+            />
+            <input
+              type="tel"
+              name="whatsapp"
+              placeholder="Telefone"
+              aria-label="Telefone"
+              required
+            />
+          </div>
+          <button type="submit" class="hero-form-button">Enviar mensagem</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </header>
     <section class="about" id="about">
@@ -933,7 +952,7 @@
         </p>
       </div>
       <div class="form-contact">
-        <form id="contact-form">
+        <form id="contact-form" class="js-contact-form">
           <div class="form-group">
             <label for="name">Nome</label>
             <div class="form-input-icon">
