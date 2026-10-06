@@ -7,4 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCargoShowcase();
   initShowcaseTabs();
   initContactForm();
+  initNavbarScroll();
+  initReveal();
 });

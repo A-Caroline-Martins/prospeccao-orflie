@@ -6,10 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css?v=2026100601" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -55,7 +55,7 @@
         >Fale Conosco</a
       >
     </nav>
-    <header>
+    <header id="home">
       <section class="header">
         <div class="home-texts">
           <span class="hero-badge">
@@ -74,7 +74,7 @@
         </div>
         <form class="hero-form js-contact-form">
           <p class="hero-form-title">
-            Fale com a gente <i class="fa-solid fa-arrow-right"></i>
+            Deixe seu contato <i class="fa-solid fa-arrow-right"></i>
           </p>
           <div class="hero-form-fields">
             <input
@@ -105,7 +105,7 @@
       </section>
     </header>
     <section class="about" id="about">
-      <div class="about-texts">
+      <div class="about-texts" data-reveal>
         <p class="eyebrow">Sobre</p>
         <h2 class="showcase-title">Prospecção sem complicação</h2>
         <p class="description">
@@ -117,7 +117,7 @@
           uma campanha automática.
         </p>
       </div>
-      <div class="about-visual">
+      <div class="about-visual" data-reveal>
         <figure class="about-card">
           <img
             class="about-card-image"
@@ -136,11 +136,11 @@
     </section>
 
     <section class="features" id="features">
-      <div class="features-texts">
+      <div class="features-texts" data-reveal>
         <p class="eyebrow">Funcionalidades</p>
-        <p class="showcase-title">
+        <h2 class="showcase-title">
           Escolha o caminho ideal para o seu negócio.
-        </p>
+        </h2>
         <p class="description">
           Cinco ferramentas para encontrar e completar seus próximos clientes,
           todas dentro da mesma plataforma.
@@ -148,12 +148,12 @@
       </div>
 
       <div class="features-cards">
-        <div class="card">
+        <div class="card" data-reveal>
           <div class="card-image">
             <i class="fa-solid fa-building"></i>
           </div>
           <div class="card-texts">
-            <h1 class="title">RECEITA FEDERAL</h1>
+            <h3 class="title">Receita Federal</h3>
             <p class="description">
               Filtre empresas por CNAE, cidade ou porte direto na base da
               Receita Federal e receba e-mail e WhatsApp dos sócios já
@@ -161,12 +161,12 @@
             </p>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <div class="card-image">
             <i class="fa-solid fa-location-dot"></i>
           </div>
           <div class="card-texts">
-            <h1 class="title">GOOGLE MAPS</h1>
+            <h3 class="title">Google Maps</h3>
             <p class="description">
               Encontre negócios reais no Google Maps por categoria e região,
               cada lead já sai pontuado, pra você falar primeiro com quem tem
@@ -174,36 +174,36 @@
             </p>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <div class="card-image">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
           <div class="card-texts">
-            <h1 class="title">ENRIQUECIMENTO</h1>
+            <h3 class="title">Enriquecimento</h3>
             <p class="description">
               Tem só o nome da empresa? A Orflia completa o resto, e-mail,
               telefone, o decisor certo, domínio e sócios automaticamente.
             </p>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <div class="card-image">
             <i class="fa-solid fa-at"></i>
           </div>
           <div class="card-texts">
-            <h1 class="title">REDES SOCIAIS</h1>
+            <h3 class="title">Redes Sociais</h3>
             <p class="description">
               Escolha um nicho no Instagram ou TikTok, a Orflia monta a lista de
               perfis e ainda sugere a mensagem de abordagem pra você mandar.
             </p>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <div class="card-image">
             <i class="fa-solid fa-user-tie"></i>
           </div>
           <div class="card-texts">
-            <h1 class="title">POR CARGO</h1>
+            <h3 class="title">Por Cargo</h3>
             <p class="description">
               Escolha o ramo, a cidade e o cargo, gerente de RH, diretor de TI,
               dono e receba o nome e o e-mail nominal de quem ocupa a vaga,
@@ -215,7 +215,7 @@
     </section>
 
     <section class="showcase" id="showcase">
-      <div class="showcase-intro">
+      <div class="showcase-intro" data-reveal>
         <p class="eyebrow">Prospecção</p>
         <h2 class="showcase-title">
           Encha seu funil <span class="highlight">no automático</span>.
@@ -832,7 +832,7 @@
     </section>
 
     <section class="comparison" id="comparison">
-      <div class="comparison-intro">
+      <div class="comparison-intro" data-reveal>
         <p class="eyebrow">Realidade vs Orflia</p>
         <h2 class="comparison-title">
           Como era o seu comercial.<br />
@@ -841,7 +841,7 @@
       </div>
 
       <div class="comparison-grid">
-        <div class="comparison-card negative">
+        <div data-reveal class="comparison-card negative">
           <div class="comparison-card-header">
             <span class="comparison-icon"
               ><i class="fa-solid fa-xmark"></i
@@ -876,7 +876,7 @@
           </ul>
         </div>
 
-        <div class="comparison-card positive">
+        <div data-reveal class="comparison-card positive">
           <span class="comparison-badge"
             >Orflia <i class="fa-solid fa-check"></i
           ></span>
@@ -940,7 +940,7 @@
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-texts">
+      <div class="contact-texts" data-reveal>
         <p class="eyebrow">Contato</p>
         <h2 class="final-cta-title">
           Pronto para
@@ -951,7 +951,7 @@
           e começar a prospectar hoje mesmo.
         </p>
       </div>
-      <div class="form-contact">
+      <div class="form-contact" data-reveal>
         <form id="contact-form" class="js-contact-form">
           <div class="form-group">
             <label for="name">Nome</label>
@@ -1081,14 +1081,15 @@
     </a>
 
     </footer>
-    <script src="./assets/js/nav-toggle.js"></script>
-    <script src="./assets/js/google-maps-showcase.js"></script>
-    <script src="./assets/js/receita-federal-showcase.js"></script>
-    <script src="./assets/js/enrichment-showcase.js"></script>
-    <script src="./assets/js/social-showcase.js"></script>
-    <script src="./assets/js/cargo-showcase.js"></script>
-    <script src="./assets/js/showcase-tabs.js"></script>
-    <script src="./assets/js/contact-form.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/nav-toggle.js?v=2026100601"></script>
+    <script src="./assets/js/google-maps-showcase.js?v=2026100601"></script>
+    <script src="./assets/js/receita-federal-showcase.js?v=2026100601"></script>
+    <script src="./assets/js/enrichment-showcase.js?v=2026100601"></script>
+    <script src="./assets/js/social-showcase.js?v=2026100601"></script>
+    <script src="./assets/js/cargo-showcase.js?v=2026100601"></script>
+    <script src="./assets/js/showcase-tabs.js?v=2026100601"></script>
+    <script src="./assets/js/contact-form.js?v=2026100601"></script>
+    <script src="./assets/js/ui-effects.js?v=2026100601"></script>
+    <script src="./assets/js/main.js?v=2026100601"></script>
   </body>
 </html>

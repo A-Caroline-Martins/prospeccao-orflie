@@ -10,9 +10,22 @@ function setupContactForm(form) {
   const WEBHOOK_URL =
     "https://orflia.ai/api/webhooks/formulario/82a7480a-3ca9-4995-87ab-08828ece3600";
 
+  const SUCCESS_DURATION = 3000;
+  let hideTimer;
+
+  function clearStatus() {
+    clearTimeout(hideTimer);
+    status.className = "form-status";
+    status.textContent = "";
+  }
+
   function showStatus(type, text) {
+    clearTimeout(hideTimer);
     status.className = "form-status is-" + type;
     status.textContent = text;
+    if (type === "success") {
+      hideTimer = setTimeout(clearStatus, SUCCESS_DURATION);
+    }
   }
 
   function setSending(sending) {
@@ -33,8 +46,7 @@ function setupContactForm(form) {
     });
 
     setSending(true);
-    status.className = "form-status";
-    status.textContent = "";
+    clearStatus();
 
     fetch(WEBHOOK_URL, {
       method: "POST",
